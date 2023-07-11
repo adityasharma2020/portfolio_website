@@ -30,7 +30,7 @@
 
     @media (max-width: 600px) {
       & {
-        width:90vw;
+        width: 90vw;
       }
     }
   }
@@ -47,7 +47,7 @@
     border-radius: 20px;
 
     &--inner {
-      width: 50%;
+      width: 0px;
       height: 100%;
       border-radius: 20px;
       background: $loader_light_green;
@@ -91,8 +91,8 @@
       bottom: 0;
     }
 
-    @media (max-width : 355px){
-      &{
+    @media (max-width: 355px) {
+      & {
         font-size: 17px;
       }
     }
@@ -117,14 +117,24 @@
   }
 
   &__width-animation {
+    // use this class whereever we want to put this animation
+    // forward because we want to be the border in the final state of animation .
     animation: width_animation 1s forwards;
     @keyframes width_animation {
       from {
         width: 85%;
       }
       to {
-        width: 270px;
+        width: 280px;
       }
     }
+  }
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
   }
 }
