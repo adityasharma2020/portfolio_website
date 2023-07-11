@@ -1,126 +1,130 @@
-//------------- Variables----------
-$green_loader: rgb(89, 144, 6);
-$loader_blue_background: rgb(13, 7, 128);
-$loader_light_green:rgb(7, 196, 7);
-
-.loading{
+@import "./base.scss";
+.loading {
   //so that  it is on top of everyting
-  position:fixed;
+  position: fixed;
+
   top: 0;
-  left:0;
+  left: 0;
   right: 0;
   bottom: 0;
+  //not necessary
   height: 100vh;
   width: 100%;
-   z-index: 99;
-   background: $loader_blue_background;
-   display: grid;
-   place-items: center;
-   font-family: "Orbitron",sans-serif;
+  z-index: 99;
+  background: $loader_blue_background;
 
-   &__box{
-    // as we wnat to position it with respenct to its position.
+  //as we have a single item here to center ,so it is easy to use grid
+  display: grid;
+  place-items: center;
+  font-family: "Orbitron", sans-serif;
+
+  &__box {
+    // as we wnat to position it with respect to its position.
     position: relative;
     width: 500px;
     height: 200px;
+
     border: 3px solid rgb(89, 144, 6);
     border-top: 3px solid rgb(164, 225, 72);
     border-bottom: 3px solid rgb(172, 237, 74);
-    
-    @media (max-width:600px) {
-      &{
-        width: 90vw;
+
+    @media (max-width: 600px) {
+      & {
+        width:90vw;
       }
-
     }
-   }
+  }
 
-   &__bar{
+  &__bar {
     width: 90%;
+    height: 10px;
     //because we want to place the bar in the middle of the object so we us absolute position which is relative to parent i.e box.
     position: absolute;
-    height: 10px;
     top: 50%;
-    left:5%;
-    //left:50%;
-    // transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
     background: white;
-    border-radius: 2px;
+    border-radius: 20px;
 
-    &--inner{
+    &--inner {
       width: 50%;
       height: 100%;
+      border-radius: 20px;
       background: $loader_light_green;
     }
-   }
+  }
 
-   &__text{
-      position: relative;
-      color: white;
-      padding: 1rem;
-      font-size: 20px;
-      display: flex;
-      justify-content:center;
-      align-items: center;
+  &__text {
+    position: absolute;
+    width: 100%;
+    color: white;
+    padding: 1rem;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      &--dot{
-        width: 15px;
-        height: 15px;
-        margin:0 4px;
-        border-radius: 50%;
-        background-color:white;
-        animation: pulse 1s infinite;
+    &--dot {
+      width: 15px;
+      height: 15px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background-color: white;
+      animation: pulse 1s infinite;
 
-        @keyframes pulse{
-          from{
-            opacity:0;
-            background: $green_loader; 
-          }
-          to{
-            opacity: 1;
-          }
+      @keyframes pulse {
+        from {
+          opacity: 0;
+          background: $green_loader;
+        }
+        to {
+          opacity: 1;
         }
       }
-
-      &--border{
-        width: 85%;
-        height: 1px;
-        background-color: $green_loader;
-        position: absolute;
-        bottom: 0;
-      }
-
     }
- 
-    &__counter{
+
+    &--border {
+      width: 85%;
+      height: 1px;
+      background-color: $green_loader;
       position: absolute;
-      top: 70%;
-      left: 0;
-      color: white;
-      font-size: 20px;
-      font-weight: 700;
-      width: 100%;
-      display:flex;
-      align-items: center;
-      justify-content:space-between;
-      padding: 10px;
-
-      &--number{
-        color: $loader_light_green;
-      }
-
-
+      bottom: 0;
     }
 
-    &__width-animation{
-      animation: width_animation 1s forwards;
-      @keyframes width_animation {
-        from{
-          width: 85%;
-        }
-        to{
-          width: 270px;
-        }
+    @media (max-width : 355px){
+      &{
+        font-size: 17px;
       }
     }
-} 
+  }
+
+  &__counter {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    &--number {
+      color: $loader_light_green;
+    }
+  }
+
+  &__width-animation {
+    animation: width_animation 1s forwards;
+    @keyframes width_animation {
+      from {
+        width: 85%;
+      }
+      to {
+        width: 270px;
+      }
+    }
+  }
+}
