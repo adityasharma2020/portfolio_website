@@ -12,7 +12,7 @@ let barInterval = setInterval(() => {
     clearInterval(barInterval);
 
     gsap.to(".loading__bar", {
-      duration: 3,
+      duration: 1.5,
       rotate: "90deg",
       left: "300%",
     });
@@ -21,28 +21,32 @@ let barInterval = setInterval(() => {
       duration: 1,
       opacity: 0,
     });
-    gsap.to("..loading__box", {
+    gsap.to(".loading__box", {
       duration: 2,
       height: "500px",
       borderRadius: "50%",
     });
-    gsap.to("..loading__svg", {
+    gsap.to(".loading__svg", {
       duration: 10,
       opacity: 1,
       rotate: "360deg",
     });
 
-    gsap.to("..loading__box", {
+    gsap.to(".loading__box", {
       delay: 2,
-      border: none,
-      rotate: "360deg",
+      border: "none",
     });
 
-    gsap.to("..loading", {
-     delay:2,
-     duration:2,
-     background:"transparent",
-     opacity:0.5
+    gsap.to(".loading", {
+      delay: 2,
+      duration: 2,
+      background: "transparent",
+      opacity: 0.5,
+    });
+    gsap.to(".loading__svg", {
+      delay: 2,
+      duration: 100,
+      rotate: "360deg",
     });
   }
 }, 20);

@@ -12,11 +12,11 @@
   width: 100%;
   z-index: 99;
   background: $loader_blue_background;
-
   //as we have a single item here to center ,so it is easy to use grid
   display: grid;
   place-items: center;
   font-family: "Orbitron", sans-serif;
+  display: none;
 
   &__box {
     // as we wnat to position it with respect to its position.
@@ -134,7 +134,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    width: 80%;
     opacity: 0;
   }
 }
