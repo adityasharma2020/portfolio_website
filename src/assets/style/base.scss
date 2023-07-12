@@ -2,6 +2,15 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@100;200;300;500&display=swap");
 
+//to use your own loacal custom font
+@font-face {
+  //name anything to font
+  font-family: "myfont";
+  src: url(../fonts/Roboto-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -62,3 +71,17 @@ $loader_blue_background: rgb(13, 7, 128);
 $loader_light_green: rgb(7, 196, 7);
 $purple-color: #ed0265;
 $blue_color: #3954eb;
+$yellow-color: #f1f500;
+
+
+//------------ predefined classes----------------
+.section{
+  padding: 1rem;
+  overflow: hidden;
+  min-heigth : 100vh;
+  padding-top: 5rem;
+
+  @media (min-width:650px){
+    padding: 5rem;
+  }
+}

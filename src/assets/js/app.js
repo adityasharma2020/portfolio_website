@@ -36,13 +36,16 @@ let barInterval = setInterval(() => {
       delay: 1.5,
       border: "none",
     });
-
+    gsap.to(".loading", {
+      delay: 1.5,
+      zIndex:1
+     });
+ 
     gsap.to(".loading", {
       delay: 1.5,
       duration: 2,
-      background: "transparent",
       opacity: 0.5,
-      zIndex:1
+      background: "transparent",
     });
     gsap.to(".loading__svg", {
       delay: 2,
