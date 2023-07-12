@@ -1,3 +1,5 @@
+@import "base.scss";
+
 .coollink {
   position: relative;
   display: grid;
@@ -62,7 +64,7 @@
   }
   &:before {
     content: "";
-    background-color: white;
+    background-color: rgb(254, 254, 254);
     clip-path: path(
       "M154.5,88.5 C131,113.5 62.5,110 30,89.5 C-2.5,69 -3.5,42 4.5,25.5 C12.5,9 33.5,-6 85,3.5 C136.5,13 178,63.5 154.5,88.5 Z"
     );
@@ -100,6 +102,30 @@
     & {
       transform: scale3d(0.7, 0.7, 0.7);
       font-size: 19px;
+    }
+  }
+}
+
+.coloredIcon {
+  font-size: 35px;
+  &:hover {
+    animation: colouredIconAnimation 1s infinite;
+  }
+  @keyframes colouredIconAnimation {
+    0% {
+      text-shadow: 5px 4px $purple-color,-5px -4px $blue_color;
+    }
+    25% {
+      text-shadow: -5px -4px $purple-color,5px 4px $blue_color;
+    }
+    50% {
+      text-shadow: 5px -4px $purple-color,-5px 4px $blue_color;
+    }
+    75% {
+      text-shadow: -5px 4px $purple-color,5px -4px $blue_color;
+    }
+    100% {
+      text-shadow: 5px 4px $purple-color,-5px -4px $blue_color;
     }
   }
 }

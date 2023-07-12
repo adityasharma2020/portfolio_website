@@ -22,8 +22,8 @@ let barInterval = setInterval(() => {
       opacity: 0,
     });
     gsap.to(".loading__box", {
-      duration: 2,
-      height: "500px",
+      duration: 1.4,
+      height: "57vh",
       borderRadius: "50%",
     });
     gsap.to(".loading__svg", {
@@ -33,15 +33,16 @@ let barInterval = setInterval(() => {
     });
 
     gsap.to(".loading__box", {
-      delay: 2,
+      delay: 1.5,
       border: "none",
     });
 
     gsap.to(".loading", {
-      delay: 2,
+      delay: 1.5,
       duration: 2,
       background: "transparent",
       opacity: 0.5,
+      zIndex:1
     });
     gsap.to(".loading__svg", {
       delay: 2,
