@@ -630,3 +630,27 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
   overflow: hidden;
 }
+
+// custom code---------------->
+
+.swiper-pagination {
+  position: relative;
+  display: none;
+  @media (min-width:800px) {
+    &{
+      display:block ;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  // my code
+  width: 35px;
+  height: 4px;
+  border-radius: 50px;
+  background: #fff;
+}
+
+.swiper-pagination-bullet-active {
+  width: 70px;
+}

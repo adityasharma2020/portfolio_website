@@ -5,3 +5,4 @@ import "../style/coollink.scss";
 import "../style/skills.scss";
 import "../style/swiper.scss";
 import "../style/reviews.scss";
+import "../style/projects.scss";

@@ -113,19 +113,49 @@
   }
   @keyframes colouredIconAnimation {
     0% {
-      text-shadow: 5px 4px $purple-color,-5px -4px $blue_color;
+      text-shadow: 5px 4px $purple-color, -5px -4px $blue_color;
     }
     25% {
-      text-shadow: -5px -4px $purple-color,5px 4px $blue_color;
+      text-shadow: -5px -4px $purple-color, 5px 4px $blue_color;
     }
     50% {
-      text-shadow: 5px -4px $purple-color,-5px 4px $blue_color;
+      text-shadow: 5px -4px $purple-color, -5px 4px $blue_color;
     }
     75% {
-      text-shadow: -5px 4px $purple-color,5px -4px $blue_color;
+      text-shadow: -5px 4px $purple-color, 5px -4px $blue_color;
     }
     100% {
-      text-shadow: 5px 4px $purple-color,-5px -4px $blue_color;
+      text-shadow: 5px 4px $purple-color, -5px -4px $blue_color;
+    }
+  }
+}
+
+.coolFunnyLink {
+  position: relative;
+  font-family: sans-serif;
+  svg {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    stroke-width: 1px;
+    width: 95%;
+
+    path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      // transform: scale3d(0, 1, 1);
+      transition:  stroke-dashoffset 0.6s cubic-bezier(0.075, 0, 0.365, 1);
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        stroke-dashoffset: 0;
+        // also done with the transform ---->
+        // transform: scale3d(1, 1, 1);
+        transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+      }
     }
   }
 }
