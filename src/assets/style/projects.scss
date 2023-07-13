@@ -197,7 +197,12 @@
   .projects {
     padding: 2rem;
   }
-
+  .project {
+    height: 90vh;
+  }
+  .project__links {
+    padding-top: 5rem;
+  }
   .projects__header {
     font-size: 34px;
   }
@@ -205,6 +210,9 @@
   .project__infos--name {
     font-size: 23px;
     font-weight: 600;
+    span {
+      display: none;
+    }
   }
   .project__img img {
     width: 100vw;
@@ -213,7 +221,18 @@
 
   .coolCircleEyeButton {
     position: absolute;
-
     left: 94%;
+  }
+  .project__tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 60px;
+    margin-right: 31px;
+    top: 5px;
+    left: 0;
+    span {
+      font-size: 14px;
+      gap: 6px;
+    }
   }
 }
