@@ -2,6 +2,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@100;200;300;500&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+@import url("https://fonts.cdnfonts.com/css/nulshock");
 //to use your own loacal custom font
 @font-face {
   //name anything to font
@@ -71,17 +74,22 @@ $loader_blue_background: rgb(13, 7, 128);
 $loader_light_green: rgb(7, 196, 7);
 $purple-color: #ed0265;
 $blue_color: #3954eb;
+$red-color: #f44336;
 $yellow-color: #f1f500;
-
+$darkish-blue: #060b11;
+$box-shadow-blue1: #2234e87a;
+$box-shadow-blue2: rgba(28, 35, 116, 0.945);
 
 //------------ predefined classes----------------
-.section{
+.section {
   padding: 1rem;
   overflow: hidden;
-  min-heigth : 100vh;
+  min-height: 100vh;
   padding-top: 5rem;
+ 
 
-  @media (min-width:650px){
-    padding: 5rem;
+  @media (min-width: 650px) {
+    //min-width 500 means when width is 500 or more atleast 500 then this css apply
+    padding: 3rem;
   }
 }

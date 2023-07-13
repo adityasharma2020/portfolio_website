@@ -107,6 +107,7 @@
     "stable": "^0.1.8",
     "supports-color": "^7.2.0",
     "svgo": "^2.8.0",
+    "swiper": "^10.0.4",
     "term-size": "^2.2.1",
     "terser": "^5.15.0",
     "timsort": "^0.3.0",
