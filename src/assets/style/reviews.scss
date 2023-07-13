@@ -102,10 +102,10 @@
   }
 
   & svg {
+    width: 30px;
     position: absolute;
-    top: 0;
+    top: 10px;
     left: -6px;
-    width: 50px;
     fill: $red-color;
   }
   &__topborder {
