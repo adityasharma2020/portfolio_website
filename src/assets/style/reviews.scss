@@ -81,6 +81,7 @@
 
 .swiper__wrapper {
   padding: 2rem 0;
+  overflow: hidden;
 
   @media (max-width: 650px) {
     padding: 2rem;
@@ -112,8 +113,8 @@
   & svg {
     width: 30px;
     position: absolute;
-    top: 10px;
-    left: -6px;
+    top: 7px;
+    left: -3px;
     fill: $red-color;
 
     @media (min-width: 500px) {
@@ -157,17 +158,19 @@
   }
 }
 
-.swiper-slide {
-  filter: blur(2px) !important;
-  transform: scale(0.8) !important;
-  transition: all 0.2s;
-}
+// to make one slide in focus and other blured
 
-.swiper-slide-active {
-  filter: blur(0) !important;
-  transform: scale(1) !important;
-  transition: all 0.2s;
-}
+// .swiper-slide {
+//   filter: blur(2px) !important;
+//   transform: scale(0.8) !important;
+//   transition: all 0.2s;
+// }
+
+// .swiper-slide-active {
+//   filter: blur(0) !important;
+//   transform: scale(1) !important;
+//   transition: all 0.2s;
+// }
 
 .swiper__tools {
   position: relative;

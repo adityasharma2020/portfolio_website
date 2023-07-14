@@ -1,4 +1,4 @@
-import Swiper, { Pagination,Navigation } from "swiper";
+import Swiper, { Pagination, Navigation } from "swiper";
 
 import gsap from "gsap";
 import { reviews } from "./data";
@@ -58,10 +58,11 @@ let barInterval = setInterval(() => {
   }
 }, 20);
 
-Swiper.use([Navigation,Pagination]);
+Swiper.use([Navigation, Pagination]);
 var swiper = new Swiper(".swiper", {
   slidesPerView: 1,
   spaceBetween: 30,
+  freeMode: true,
   breakpoints: {
     850: {
       slidesPerView: 2,
@@ -97,4 +98,21 @@ reviews.map((review) => {
 
   //adding  the new reviews to swiper_container
   swiper_container.innerHTML += template;
+});
+
+const questions = [...document.querySelectorAll(".question")];
+questions.map((question) => {
+  let q_text = question.querySelector("h3");
+  q_text.addEventListener("click", () => {
+    questions
+      .filter((q) => q !== question)
+      .map((q) => q.classList.remove("open"));
+    
+    question.classList.toggle("open")
+  });
+
+  // if we want to keep multiple questions open at a time
+  // question.addEventListener("click", () => {
+  //   question.classList.toggle("open");
+  // });
 });
