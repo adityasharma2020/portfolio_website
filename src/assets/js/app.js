@@ -1,7 +1,8 @@
-import Swiper, { Pagination, Navigation } from "swiper";
-
+import Swiper, { Pagination, Navigation, Scrollbar } from "swiper";
+import imagesLoaded from "imagesloaded";
 import gsap from "gsap";
 import { reviews } from "./data";
+import SmoothScrollbar from "smooth-scrollbar";
 
 const bar = document.querySelector(".loading__bar--inner");
 const counter_num = document.querySelector(".loading__counter--number");
@@ -30,7 +31,7 @@ let barInterval = setInterval(() => {
       borderRadius: "50%",
     });
     gsap.to(".loading__svg", {
-      duration: 10,
+      duration: 9,
       opacity: 1,
       rotate: "360deg",
     });
@@ -39,21 +40,38 @@ let barInterval = setInterval(() => {
       delay: 1.5,
       border: "none",
     });
-    gsap.to(".loading", {
-      delay: 1.5,
-      zIndex: 1,
-    });
+    imagesLoaded(document.querySelector("img"), () => {
+      gsap.to(".loading", {
+        position:"absolute",
+        zIndex: 1,
+        delay: 1.5,
+        duration: 2,
+        opacity: 0.5,
+        background: "transparent",
+      });
+      gsap.to(".loading__svg", {
+        delay: 2,
+        duration: 100,
+        rotate: "360deg",
+      });
 
-    gsap.to(".loading", {
-      delay: 1.5,
-      duration: 2,
-      opacity: 0.5,
-      background: "transparent",
-    });
-    gsap.to(".loading__svg", {
-      delay: 2,
-      duration: 100,
-      rotate: "360deg",
+      gsap.to("header", {
+        duration: 1,
+        delay: 1,
+        top: "1rem",
+      });
+      gsap.to(".socials", {
+        duration: 1,
+        delay: 1.5,
+        bottom: "8rem",
+      });
+      gsap.to(".scrolldown", {
+        duration: 1,
+        delay: 2,
+        bottom: "2rem",
+      });
+
+      let pageSmoothScroll = Scrollbar.init(document.body);
     });
   }
 }, 20);
@@ -107,8 +125,8 @@ questions.map((question) => {
     questions
       .filter((q) => q !== question)
       .map((q) => q.classList.remove("open"));
-    
-    question.classList.toggle("open")
+
+    question.classList.toggle("open");
   });
 
   // if we want to keep multiple questions open at a time
