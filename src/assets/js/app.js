@@ -16,9 +16,8 @@ let barInterval = setInterval(() => {
     clearInterval(barInterval);
 
     gsap.to(".loading__bar", {
-      duration: 1.5,
-      rotate: "90deg",
-      left: "300%",
+      duration: 0.5,
+      opacity: 0,
     });
 
     gsap.to(".loading__text, .loading__counter", {
@@ -42,7 +41,7 @@ let barInterval = setInterval(() => {
     });
     imagesLoaded(document.querySelector("img"), () => {
       gsap.to(".loading", {
-        position:"absolute",
+        position: "absolute",
         zIndex: 1,
         delay: 1.5,
         duration: 2,
