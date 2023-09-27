@@ -46,6 +46,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  color: inherit;
 }
 
 button,
@@ -74,7 +75,7 @@ $blue_color: #3954eb;
 $red-color: #f44336;
 $yellow-color: #f1f500;
 $darkish-blue: #060b11;
-$box-shadow-blue1: #2234e87a;
+$box-shadow-blue1: #2233e855;
 $box-shadow-blue2: rgba(28, 35, 116, 0.945);
 
 //------------ predefined classes----------------

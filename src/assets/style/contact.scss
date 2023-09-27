@@ -39,6 +39,13 @@
       gap: 5px;
       font-size: 17px;
       z-index: 1;
+      
+       img{
+          width: 18rem;
+          height: auto;
+          border-radius: 10px;
+        }
+      
     }
     &-bg {
       position: absolute;

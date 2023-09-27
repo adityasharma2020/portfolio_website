@@ -1,7 +1,7 @@
-import avatar1 from "../images/avatars/1.webp";
-import avatar2 from "../images/avatars/2.webp";
-import avatar3 from "../images/avatars/3.webp";
-import avatar4 from "../images/avatars/4.webp";
+import avatar1 from "../images/idyll_logo.jpg";
+import avatar2 from "../images/pepcoding_logo.jpg";
+import avatar3 from "../images/ncomputing_logo.png";
+import avatar4 from "../images/shree_balaiji_logo_circle.png";
 import avatar5 from "../images/avatars/5.webp";
 import avatar6 from "../images/avatars/6.webp";
 

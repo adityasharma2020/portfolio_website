@@ -11,65 +11,6 @@ const bar = document.querySelector('.loading__bar--inner')
 const counter_num = document.querySelector('.loading__counter--number')
 let c = 0
 
-// sanity setup ------------------------->
-
-// const client = sanityClient({
-//   projectId: 'o5gda3yt',
-//   dataset: 'production',
-//   apiVersion: '2022-02-01',
-//   useCdn: true,
-//   token:
-//     'sk1TACo0ESZzXngncPqUqMX94sDCPid1XR13fZElG29eMY7ChhkvoLVj98hEpln6AJm9ruNdhsCg2ckajtTYzn5eHdjSPZITBryTQoztcwJzOpyrSo5qzTP4qXRXtU4YYMZeS7uOWjiPpfL4fleCK7f0sRb0UuuuJtqYSgtINHu4dQmiE2fN',
-// })
-
-//  const query = `*[_type == "someType"] {
-//   ...rest of fields
-//   image {
-//     asset -> {
-//       url
-//     }
-//   }
-// }`
-// const builder = imageUrlBuilder(client)
-
-// const urlFor = (source) => builder.image(source)
-// client
-//   .fetch(query)
-//   .then((res) => res.json())
-//   .then(({ result }) => {
-//     console.log(result);
-//   })
-
-let PROJECT_ID = 'o5gda3yt'
-let DATASET = 'production'
-let QUERY = '*[_type == "reviews"]'
-let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
-
-// fetch the content
-fetch(URL)
-  .then((res) => res.json())
-  .then(({ result }) => {
-    console.log(result)
-    result.map((review) => {
-      //this html is basically what we first hard coded , but now we are doing it with js and , finally we minify our html to look more cleaner.
-      let template = `<div class="swiper-slide"><div class="review"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M13 10.5C13 12.433 14.567 14 16.5 14L20 17.5V10.5C20 8.567 18.433 7 16.5 7C14.567 7 13 8.567 13 10.5Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M3 10.5C3 12.433 4.567 14 6.5 14L10 17.5V10.5C10 8.567 8.433 7 6.5 7C4.567 7 3 8.567 3 10.5Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path></g></svg><div class="review__card"><div class="review__topborder"></div><div class="review__text"><span>${review.review.substring(
-        0,
-        1
-      )}</span>${review.review.substring(
-        1,
-        review.review.length
-      )}</div><img src="https://cdn.sanity.io/images/o5gda3yt/production/${review.imgUrl.asset._ref.substring(6,review.imgUrl.asset._ref.length-4)}.png" alt="" class="review__img"><div class="review__profile"><span>${
-        review.name
-      }</span><span>${review.position}</span></div></div></div></div>`
-
-      //adding  the new reviews to swiper_container
-      swiper_container.innerHTML += template
-    })
-  })
-  
-
-// =====================================================================
-
 let barInterval = setInterval(() => {
   bar.style.width = c + '%'
   counter_num.innerText = c + '%'
@@ -131,8 +72,6 @@ let barInterval = setInterval(() => {
         delay: 2,
         bottom: '2rem',
       })
-
-     
     })
   }
 }, 20)
@@ -147,10 +86,10 @@ var swiper = new Swiper('.swiper', {
       slidesPerView: 2,
     },
     1200: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     1900: {
-      slidesPerView: 4,
+      slidesPerView: 3,
     },
   },
   pagination: {
@@ -164,20 +103,20 @@ var swiper = new Swiper('.swiper', {
 })
 
 const swiper_container = document.querySelector('.swiper-wrapper')
-// reviews.map((review) => {
-//   //this html is basically what we first hard coded , but now we are doing it with js and , finally we minify our html to look more cleaner.
-//   let template = `<div class="swiper-slide"><div class="review"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M13 10.5C13 12.433 14.567 14 16.5 14L20 17.5V10.5C20 8.567 18.433 7 16.5 7C14.567 7 13 8.567 13 10.5Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M3 10.5C3 12.433 4.567 14 6.5 14L10 17.5V10.5C10 8.567 8.433 7 6.5 7C4.567 7 3 8.567 3 10.5Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path></g></svg><div class="review__card"><div class="review__topborder"></div><div class="review__text"><span>${review.review.substring(
-//     0,
-//     1
-//   )}</span>${review.review.substring(1, review.review.length)}</div><img src="${
-//     review.image
-//   }" alt="" class="review__img"><div class="review__profile"><span>${
-//     review.name
-//   }</span><span>${review.position}</span></div></div></div></div>`
+reviews.map((review) => {
+  //this html is basically what we first hard coded , but now we are doing it with js and , finally we minify our html to look more cleaner.
+  let template = `<div class="swiper-slide"><div class="review"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M13 10.5C13 12.433 14.567 14 16.5 14L20 17.5V10.5C20 8.567 18.433 7 16.5 7C14.567 7 13 8.567 13 10.5Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M3 10.5C3 12.433 4.567 14 6.5 14L10 17.5V10.5C10 8.567 8.433 7 6.5 7C4.567 7 3 8.567 3 10.5Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path></g></svg><div class="review__card"><div class="review__topborder"></div><div class="review__text"><span>${review.review.substring(
+    0,
+    1
+  )}</span>${review.review.substring(1, review.review.length)}</div><img src="${
+    review.image
+  }" alt="" class="review__img"><div class="review__profile"><span>${
+    review.name
+  }</span><span>${review.position}</span></div></div></div></div>`
 
-//   //adding  the new reviews to swiper_container
-//   swiper_container.innerHTML += template
-// })
+  //adding  the new reviews to swiper_container
+  swiper_container.innerHTML += template
+})
 
 const questions = [...document.querySelectorAll('.question')]
 questions.map((question) => {
